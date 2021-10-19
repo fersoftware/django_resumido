@@ -78,3 +78,9 @@ def post_list(request):
 </body>
 </html>
 ```
+
+## rodar
+
+```
+python manager.py runserver
+```

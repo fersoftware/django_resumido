@@ -58,9 +58,11 @@ def post_list(request):  <br>
 	
 	
 ## home/templates/blog/post_list.html
+'
 <html>  
 <body>
     <p>Hi there!</p>
     <p>It works!</p>
 </body>
 </html>
+'

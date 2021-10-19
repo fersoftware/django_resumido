@@ -7,62 +7,74 @@ django-admin startproject sys_email . <br>
 
 
 ## settings.py
-TIME_ZONE = 'America/Sao_Paulo'<br>
-LANGUAGE_CODE = 'pt-BR'<br>
-STATIC_URL = '/static/'<br>
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')<br>
-ALLOWED_HOSTS = ['127.0.0.1']<br>
+```
+TIME_ZONE = 'America/Sao_Paulo'
+LANGUAGE_CODE = 'pt-BR'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+ALLOWED_HOSTS = ['127.0.0.1']
+```
 
 ## comando
-python manage.py startapp home <br>
-python manage.py migrate <br>
-python manage.py makemigrations <br>
+```
+python manage.py startapp home 
+python manage.py migrate 
+python manage.py makemigrations 
+
+```
 
 <br><br>
 
 ## settings.py
-
-INSTALLED_APPS = [ <br>
-    'django.contrib.admin', <br>
-    'django.contrib.auth',  <br>
-    'django.contrib.contenttypes',  <br>
-    'django.contrib.sessions',  <br>
-    'django.contrib.messages',  <br>
-    'django.contrib.staticfiles',  <br>
-    'home',  <br>
-]  <br>
-
+```
+INSTALLED_APPS = [ 
+    'django.contrib.admin', 
+    'django.contrib.auth',  
+    'django.contrib.contenttypes',  
+    'django.contrib.sessions',  
+    'django.contrib.messages',  
+    'django.contrib.staticfiles',  
+    'home',  
+]  
+```
 
 ## sys_mail/urls.py
-from django.contrib import admin <br>
-from django.urls import path, include <br>
 
-urlpatterns = [  <br>
-    path('admin/', admin.site.urls),  <br>
-    path('', include('home.urls')),  <br>
-]  <br>
+```
+from django.contrib import admin 
+from django.urls import path, include 
 
+urlpatterns = [  
+    path('admin/', admin.site.urls), 
+    path('', include('home.urls')),  
+]  
+```
 
 ## home/urls.py
-from django.urls import path  <br> 
-from . import views  <br>
+```
+from django.urls import path  
+from . import views  
 
-urlpatterns = [  <br>
-    path('', views.post_list, name='post_list'),  <br>
-]  <br>
+urlpatterns = [  
+    path('', views.post_list, name='post_list'),  
+]  
+
+```
 
 
 ## home/view.py
-def post_list(request):  <br>
-    return render(request, 'home/post_list.html', {})  <br>
-	
+```
+def post_list(request):  
+    return render(request, 'home/post_list.html', {})  
+```	
 	
 ## home/templates/blog/post_list.html
-'
+
+```
 <html>  
 <body>
     <p>Hi there!</p>
     <p>It works!</p>
 </body>
 </html>
-'
+```
